@@ -1,16 +1,15 @@
 import { motion } from "framer-motion"
 
 const portfolioItems = [
-  "/portfolio-website-design-preview-modern.jpg",
-  "/photography-portfolio-website-clean.jpg",
-  "/architecture-firm-website-minimal.jpg",
-  "/design-agency-portfolio-dark-theme.jpg",
-  "/artist-portfolio-website-creative.jpg",
-  "/writer-portfolio-website-elegant.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/a43b01a4-0a53-4bc9-be0b-1bde4fac8609.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/29fa05b5-0157-4bd7-b518-691a0df85052.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/9efe5d42-b911-45c9-a9a4-ea0773805673.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/a43b01a4-0a53-4bc9-be0b-1bde4fac8609.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/29fa05b5-0157-4bd7-b518-691a0df85052.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/9efe5d42-b911-45c9-a9a4-ea0773805673.jpg",
 ]
 
 export function CarouselSection() {
-  // Duplicate for seamless loop
   const items = [...portfolioItems, ...portfolioItems]
 
   return (
@@ -39,13 +38,13 @@ export function CarouselSection() {
           {items.map((src, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[300px] md:w-[400px] rounded-xl overflow-hidden shadow-2xl"
+              className="flex-shrink-0 w-[300px] md:w-[400px] h-[300px] rounded-xl overflow-hidden shadow-2xl"
               data-clickable
             >
               <img
-                src={src || "/placeholder.svg"}
-                alt={`Пример портфолио ${(i % portfolioItems.length) + 1}`}
-                className="w-full h-auto"
+                src={src}
+                alt={`Работа ${(i % portfolioItems.length) + 1}`}
+                className="w-full h-full object-cover"
               />
             </div>
           ))}

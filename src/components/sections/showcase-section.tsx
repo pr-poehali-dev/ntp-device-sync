@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const showcaseImages = [
-  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c60096-852f-4648-9d92-fe47dfc02aac.jpg",
-  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/f36b45e7-921d-4596-bd94-21ea4ed203f9.jpg",
-  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c9c119-1538-415b-a2ea-7072c3da766c.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/a43b01a4-0a53-4bc9-be0b-1bde4fac8609.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/29fa05b5-0157-4bd7-b518-691a0df85052.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/9efe5d42-b911-45c9-a9a4-ea0773805673.jpg",
 ]
 
 export function ShowcaseSection() {
@@ -29,7 +29,7 @@ export function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Биография
+          О мастере
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-20">
@@ -39,17 +39,17 @@ export function ShowcaseSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-6">
-              Алёна Ежова — <em className="italic">топ-мастер Москвы</em>
+              Алёна Ежова — <em className="italic">любимый мастер Москвы</em>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Алёна Анатольевна Ежова — один из ведущих мастеров ногтевого сервиса Москвы с многолетним опытом и безупречной репутацией.
+                Алёна Анатольевна Ежова — один из ведущих мастеров парикмахерского искусства Москвы с многолетним опытом и безупречной репутацией.
               </p>
               <p>
-                Её работы отличают точность линий, внимание к деталям и глубокое понимание потребностей каждой клиентки. Алёна постоянно совершенствует своё мастерство, проходя обучение у лучших специалистов отрасли.
+                Её работы отличают точность линий, чувство стиля и глубокое понимание потребностей каждой клиентки. Алёна постоянно развивает своё мастерство, проходя обучение у лучших специалистов мира.
               </p>
               <p>
-                В своей практике она использует только сертифицированные материалы премиум-класса, которые гарантируют долговечный результат и безопасность.
+                Сервис премиум-класса — это не просто слова. Каждая клиентка уходит с результатом, который превосходит ожидания.
               </p>
             </div>
             <motion.a
@@ -72,7 +72,7 @@ export function ShowcaseSection() {
           >
             <img
               src={showcaseImages[2]}
-              alt="Алёна Ежова — топ-мастер"
+              alt="Алёна Ежова за работой"
               className="w-full h-full object-cover"
             />
           </motion.div>

@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
-  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c60096-852f-4648-9d92-fe47dfc02aac.jpg",
-  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/f36b45e7-921d-4596-bd94-21ea4ed203f9.jpg",
-  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c9c119-1538-415b-a2ea-7072c3da766c.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/a43b01a4-0a53-4bc9-be0b-1bde4fac8609.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/29fa05b5-0157-4bd7-b518-691a0df85052.jpg",
+  "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/9efe5d42-b911-45c9-a9a4-ea0773805673.jpg",
 ]
 
 export function HeroSection() {
@@ -80,7 +80,7 @@ export function HeroSection() {
           Алёна Ежова, <em className="italic">топ-мастер</em>.
         </h1>
         <p className="text-sm md:text-base uppercase tracking-[0.3em] text-foreground/70 mix-blend-difference font-light">
-          Москва · Ногтевой сервис премиум-класса
+          Москва · Парикмахерское искусство премиум-класса
         </p>
       </motion.div>
 

@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
-function NailShapeAnimation() {
-  const [shape, setShape] = useState(0)
+function HairStyleAnimation() {
+  const [style, setStyle] = useState(0)
+  const styles = ["Боб", "Каре", "Каскад"]
   const shapes = [
-    "rounded-full",
-    "rounded-[40%_40%_50%_50%]",
-    "rounded-[30%_30%_40%_40%]",
+    "rounded-t-full rounded-b-[30%]",
+    "rounded-t-[40%] rounded-b-[20%]",
+    "rounded-t-[60%] rounded-b-[50%]",
   ]
-  const labels = ["Овал", "Миндаль", "Квадрат"]
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setShape((prev) => (prev + 1) % shapes.length)
+      setStyle((prev) => (prev + 1) % styles.length)
     }, 2000)
     return () => clearInterval(interval)
   }, [])
@@ -20,11 +20,11 @@ function NailShapeAnimation() {
   return (
     <div className="flex flex-col items-center justify-center h-full gap-4">
       <motion.div
-        className={`w-12 h-20 bg-primary/40 border-2 border-primary/60 ${shapes[shape]}`}
-        animate={{ borderRadius: shape === 0 ? "50%" : shape === 1 ? "40% 40% 50% 50%" : "20%" }}
+        className={`w-16 h-24 bg-primary/40 border-2 border-primary/60 ${shapes[style]}`}
+        animate={{ borderRadius: style === 0 ? "50% 50% 30% 30%" : style === 1 ? "40% 40% 20% 20%" : "60% 60% 50% 50%" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       />
-      <span className="text-sm text-muted-foreground">{labels[shape]}</span>
+      <span className="text-sm text-muted-foreground">{styles[style]}</span>
     </div>
   )
 }
@@ -34,9 +34,9 @@ function ColorsAnimation() {
   const colors = [
     "bg-[#3d1f0d]",
     "bg-[#c4a882]",
-    "bg-[#f0e6d3]",
+    "bg-[#f5deb3]",
   ]
-  const names = ["Эспрессо", "Латте", "Капучино"]
+  const names = ["Шоколад", "Балаяж", "Блонд"]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,7 +64,7 @@ function ColorsAnimation() {
 
 function BookingIndicator() {
   const [step, setStep] = useState(0)
-  const steps = ["Выберите дату", "Выберите время", "Готово! ✓"]
+  const steps = ["Выберите услугу", "Выберите время", "Готово! ✓"]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -122,11 +122,11 @@ export function FeaturesSection() {
             data-clickable
           >
             <div className="flex-1">
-              <NailShapeAnimation />
+              <HairStyleAnimation />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-xl text-foreground">Любая форма</h3>
-              <p className="text-muted-foreground text-sm mt-1">Овал, миндаль, квадрат — идеальная форма для ваших рук.</p>
+              <h3 className="font-serif text-xl text-foreground">Любая стрижка</h3>
+              <p className="text-muted-foreground text-sm mt-1">Боб, каре, каскад — идеальная форма для вашего лица.</p>
             </div>
           </motion.div>
 
@@ -144,8 +144,8 @@ export function FeaturesSection() {
               <ColorsAnimation />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-xl text-foreground">Богатая палитра</h3>
-              <p className="text-muted-foreground text-sm mt-1">Сотни оттенков — от нежных нюдов до насыщенных тонов.</p>
+              <h3 className="font-serif text-xl text-foreground">Колористика</h3>
+              <p className="text-muted-foreground text-sm mt-1">Балаяж, омбре, мелирование — цвет, который живёт.</p>
             </div>
           </motion.div>
 

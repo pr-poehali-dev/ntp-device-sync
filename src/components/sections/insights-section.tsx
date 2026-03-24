@@ -5,28 +5,28 @@ import Icon from "@/components/ui/icon"
 
 const services = [
   {
-    title: "Маникюр с покрытием гель-лак",
-    category: "Маникюр",
-    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/f36b45e7-921d-4596-bd94-21ea4ed203f9.jpg",
-    price: "от 3 500 ₽",
-  },
-  {
-    title: "Педикюр классический",
-    category: "Педикюр",
-    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c60096-852f-4648-9d92-fe47dfc02aac.jpg",
+    title: "Стрижка и укладка",
+    category: "Стрижки",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/9efe5d42-b911-45c9-a9a4-ea0773805673.jpg",
     price: "от 4 000 ₽",
   },
   {
-    title: "Наращивание ногтей",
-    category: "Наращивание",
-    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c9c119-1538-415b-a2ea-7072c3da766c.jpg",
-    price: "от 5 500 ₽",
+    title: "Окрашивание и балаяж",
+    category: "Колористика",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/29fa05b5-0157-4bd7-b518-691a0df85052.jpg",
+    price: "от 8 000 ₽",
   },
   {
-    title: "Художественный дизайн ногтей",
-    category: "Дизайн",
-    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/f36b45e7-921d-4596-bd94-21ea4ed203f9.jpg",
-    price: "от 500 ₽/ноготь",
+    title: "Кератиновое выпрямление",
+    category: "Уход",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/a43b01a4-0a53-4bc9-be0b-1bde4fac8609.jpg",
+    price: "от 10 000 ₽",
+  },
+  {
+    title: "Свадебная причёска",
+    category: "Причёски",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/29fa05b5-0157-4bd7-b518-691a0df85052.jpg",
+    price: "от 6 000 ₽",
   },
 ]
 
@@ -39,7 +39,7 @@ export function InsightsSection() {
   }
 
   return (
-    <section className="bg-background px-6 py-24" onMouseMove={handleMouseMove}>
+    <section id="services" className="bg-background px-6 py-24" onMouseMove={handleMouseMove}>
       <div className="max-w-4xl mx-auto">
         <motion.p
           className="text-muted-foreground text-sm uppercase tracking-widest mb-8"
