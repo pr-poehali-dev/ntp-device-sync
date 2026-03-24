@@ -1,27 +1,39 @@
 import { motion } from "framer-motion"
-import { Check } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 const plans = [
   {
-    name: "Старт",
-    price: "1 200",
-    period: " руб/мес",
-    description: "Для личного портфолио",
-    features: ["5 страниц", "Свой домен", "Базовая аналитика", "Поддержка по email"],
+    name: "Маникюр",
+    price: "3 500",
+    period: " ₽",
+    description: "Классический уход за руками",
+    features: [
+      "Снятие старого покрытия",
+      "Обработка кутикулы",
+      "Покрытие гель-лаком",
+      "Укрепление базой",
+      "Увлажняющий финиш",
+    ],
   },
   {
-    name: "Про",
-    price: "2 900",
-    period: " руб/мес",
-    description: "Для растущих авторов",
-    features: ["Безлимит страниц", "Приоритет поддержки", "Расширенная аналитика", "Свой брендинг", "Работа в команде"],
+    name: "Комплекс",
+    price: "7 000",
+    period: " ₽",
+    description: "Маникюр + педикюр",
+    features: [
+      "Всё из тарифа Маникюр",
+      "Педикюр с покрытием",
+      "SPA-обработка стоп",
+      "Парафинотерапия",
+      "Скидка при повторе 10%",
+    ],
     popular: true,
   },
 ]
 
 export function PricingSection() {
   return (
-    <section className="bg-secondary px-6 py-24">
+    <section id="pricing" className="bg-secondary px-6 py-24">
       <div className="max-w-5xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -29,8 +41,8 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Простые и понятные цены</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно, платите когда готовы.</p>
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Прозрачные цены</h2>
+          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Никаких скрытых доплат — только качество и забота.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -45,8 +57,8 @@ export function PricingSection() {
               data-clickable
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime text-foreground text-xs font-medium px-3 py-1 rounded-full">
-                  Популярный
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
+                  Популярный выбор
                 </span>
               )}
 
@@ -62,21 +74,22 @@ export function PricingSection() {
               <ul className="mt-6 space-y-3">
                 {plan.features.map((feature, j) => (
                   <li key={j} className="flex items-center gap-3 text-foreground">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    <Icon name="Check" size={16} className="text-primary flex-shrink-0" />
                     <span className="text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <button
-                className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors ${
+              <a
+                href="#booking"
+                className={`block w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors text-center ${
                   plan.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-secondary text-foreground hover:bg-accent/30"
+                    : "bg-secondary text-foreground hover:bg-accent/30 border border-border"
                 }`}
               >
-                Начать
-              </button>
+                Записаться
+              </a>
             </motion.div>
           ))}
         </div>

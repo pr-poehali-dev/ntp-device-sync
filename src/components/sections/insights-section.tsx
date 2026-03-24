@@ -1,28 +1,32 @@
 import type React from "react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
-const articles = [
+const services = [
   {
-    title: "Искусство визуального сторителлинга",
+    title: "Маникюр с покрытием гель-лак",
+    category: "Маникюр",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/f36b45e7-921d-4596-bd94-21ea4ed203f9.jpg",
+    price: "от 3 500 ₽",
+  },
+  {
+    title: "Педикюр классический",
+    category: "Педикюр",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c60096-852f-4648-9d92-fe47dfc02aac.jpg",
+    price: "от 4 000 ₽",
+  },
+  {
+    title: "Наращивание ногтей",
+    category: "Наращивание",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/e2c9c119-1538-415b-a2ea-7072c3da766c.jpg",
+    price: "от 5 500 ₽",
+  },
+  {
+    title: "Художественный дизайн ногтей",
     category: "Дизайн",
-    image: "/visual-storytelling-design-article.jpg",
-  },
-  {
-    title: "Как создать личный бренд онлайн",
-    category: "Стратегия",
-    image: "/personal-branding-digital-marketing.jpg",
-  },
-  {
-    title: "Тренды типографики 2025",
-    category: "Типографика",
-    image: "/typography-trends-modern-fonts.jpg",
-  },
-  {
-    title: "Минимализм в дизайне портфолио",
-    category: "Вдохновение",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/files/f36b45e7-921d-4596-bd94-21ea4ed203f9.jpg",
+    price: "от 500 ₽/ноготь",
   },
 ]
 
@@ -43,14 +47,14 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Статьи
+          Услуги и цены
         </motion.p>
 
         <div className="divide-y divide-border">
-          {articles.map((article, i) => (
+          {services.map((service, i) => (
             <motion.a
               key={i}
-              href="#"
+              href="#booking"
               className="group flex items-center justify-between py-6 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -62,21 +66,25 @@ export function InsightsSection() {
               data-clickable
             >
               <div className="flex-1">
-                <span className="text-xs text-muted-foreground uppercase tracking-wider">{article.category}</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">{service.category}</span>
                 <h3 className="font-serif text-xl md:text-2xl text-foreground mt-1 group-hover:text-primary transition-colors">
-                  {article.title}
+                  {service.title}
                 </h3>
               </div>
-              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              <div className="flex items-center gap-4">
+                <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors hidden md:block">
+                  {service.price}
+                </span>
+                <Icon name="ArrowRight" size={20} className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              </div>
             </motion.a>
           ))}
         </div>
 
-        {/* Floating hover image */}
         <AnimatePresence>
           {hoveredIndex !== null && (
             <motion.div
-              className="fixed pointer-events-none z-50 w-[200px] md:w-[300px] rounded-lg overflow-hidden shadow-2xl hidden md:block"
+              className="fixed pointer-events-none z-50 w-[200px] md:w-[280px] rounded-lg overflow-hidden shadow-2xl hidden md:block"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{
                 opacity: 1,
@@ -88,8 +96,8 @@ export function InsightsSection() {
               transition={{ duration: 0.2 }}
             >
               <img
-                src={articles[hoveredIndex].image || "/placeholder.svg"}
-                alt={articles[hoveredIndex].title}
+                src={services[hoveredIndex].image}
+                alt={services[hoveredIndex].title}
                 className="w-full h-auto"
               />
             </motion.div>
