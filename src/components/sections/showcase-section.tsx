@@ -39,7 +39,7 @@ export function ShowcaseSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-6">
-              Алёна Ежова — <em className="italic">любимый мастер Москвы</em>
+              Алёна Ежова — <em className="italic">ваш любимый мастер</em>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
