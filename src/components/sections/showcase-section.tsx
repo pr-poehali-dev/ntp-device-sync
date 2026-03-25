@@ -71,9 +71,9 @@ export function ShowcaseSection() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
             <img
-              src={showcaseImages[2]}
-              alt="Алёна Ежова за работой"
-              className="w-full h-full object-cover"
+              src="https://cdn.poehali.dev/projects/aaf18bea-74d1-4b76-b386-c01e5633c9ea/bucket/a57e63fd-cff2-4c36-9197-6701fc6bcbe2.jpg"
+              alt="Алёна Ежова"
+              className="w-full h-full object-cover object-top"
             />
           </motion.div>
         </div>
