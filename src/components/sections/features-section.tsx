@@ -32,28 +32,33 @@ function HairStyleAnimation() {
 function ColorsAnimation() {
   const [color, setColor] = useState(0)
   const colors = [
+    "bg-[#1a0a00]",
     "bg-[#3d1f0d]",
+    "bg-[#7b4a2d]",
     "bg-[#c4a882]",
+    "bg-[#d4b896]",
+    "bg-[#e8d5b7]",
     "bg-[#f5deb3]",
+    "bg-[#faf0e6]",
   ]
-  const names = ["Шоколад", "Балаяж", "Блонд"]
+  const names = ["Чёрный шоколад", "Шоколад", "Каштан", "Балаяж", "Карамель", "Тоффи", "Блонд", "Платина"]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setColor((prev) => (prev + 1) % colors.length)
-    }, 2200)
+    }, 1800)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <div className="flex flex-col items-center justify-center h-full gap-4">
-      <div className="flex gap-3">
+      <div className="flex gap-2 flex-wrap justify-center">
         {colors.map((c, i) => (
           <motion.div
             key={i}
-            className={`w-8 h-8 rounded-full ${c} border border-border`}
-            animate={{ scale: i === color ? 1.4 : 1 }}
-            transition={{ duration: 0.5 }}
+            className={`rounded-full ${c} border border-border`}
+            animate={{ scale: i === color ? 1.5 : 1, width: i === color ? 36 : 24, height: i === color ? 36 : 24 }}
+            transition={{ duration: 0.4 }}
           />
         ))}
       </div>
@@ -107,7 +112,7 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Почему выбирают Алёну
+          Почему выбирают меня
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -164,7 +169,7 @@ export function FeaturesSection() {
             </div>
             <div className="mt-4">
               <h3 className="font-serif text-xl text-foreground">Онлайн-запись</h3>
-              <p className="text-muted-foreground text-sm mt-1">Запишитесь в удобное время — без звонков и ожидания.</p>
+              <p className="text-muted-foreground text-sm mt-1">Запись сразу через мастера, заранее вы можете выбрать образ и обсудить его с мастером.</p>
             </div>
           </motion.div>
         </div>
